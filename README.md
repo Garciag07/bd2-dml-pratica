@@ -1,5 +1,5 @@
-# Banco de Dados 2 - DLL - Prática
-Prática com instruções SQL DDL. Disciplina Banco de Dados 2
+# Banco de Dados 2 - DML - Prática
+Prática com instruções SQL DML (Data Manipulation Language). Disciplina Banco de Dados 2
 
 ### Iniciar o ambiente
     docker compose up -d
