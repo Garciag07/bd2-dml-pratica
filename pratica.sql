@@ -30,7 +30,7 @@ UPDATE notas
 SET nota = nota * 10;
 
 --Passo 3
-SELECT 
+SELECT                        -- Primeira consulta
     c.nome AS nome_curso,
     t.ano AS ano_turma,
     p.nome AS nome_professor
@@ -39,7 +39,7 @@ JOIN cursos c ON t.curso_id = c.id
 JOIN professores p ON t.professor_id = p.id
 ORDER BY t.ano, c.nome;
 
-SELECT 
+SELECT                       -- Segunda consulta
     c.nome AS nome_curso,
     t.ano AS ano_turma,
     p.nome AS nome_professor,
@@ -52,7 +52,7 @@ JOIN professores p ON t.professor_id = p.id
 WHERE t.ano = 2025
 ORDER BY p.nome, c.nome, a.nome;
 
-SELECT 
+SELECT                      -- Terceira consulta
     a.nome AS nome_aluno,
     c.nome AS nome_curso,
     t.ano AS ano_turma,
@@ -64,7 +64,7 @@ JOIN cursos c ON t.curso_id = c.id
 JOIN notas n ON n.matricula_id = m.id
 ORDER BY t.ano, c.nome, a.nome;
 
-SELECT 
+SELECT                       -- Quarta consulta
     a.nome AS nome_aluno,
     c.nome AS nome_curso,
     t.ano AS ano_turma,
