@@ -51,3 +51,31 @@ JOIN cursos c ON t.curso_id = c.id
 JOIN professores p ON t.professor_id = p.id
 WHERE t.ano = 2025
 ORDER BY p.nome, c.nome, a.nome;
+
+SELECT 
+    a.nome AS nome_aluno,
+    c.nome AS nome_curso,
+    t.ano AS ano_turma,
+    n.nota AS nota
+FROM matriculas m
+JOIN alunos a ON m.aluno_id = a.id
+JOIN turmas t ON m.turma_id = t.id
+JOIN cursos c ON t.curso_id = c.id
+JOIN notas n ON n.matricula_id = m.id
+ORDER BY t.ano, c.nome, a.nome;
+
+SELECT 
+    a.nome AS nome_aluno,
+    c.nome AS nome_curso,
+    t.ano AS ano_turma,
+    n.nota AS nota,
+    CASE 
+        WHEN n.nota >= 60.0 THEN 'Aprovado'
+        ELSE 'Reprovado'
+    END AS status_aprovacao
+FROM matriculas m
+JOIN alunos a ON m.aluno_id = a.id
+JOIN turmas t ON m.turma_id = t.id
+JOIN cursos c ON t.curso_id = c.id
+JOIN notas n ON n.matricula_id = m.id
+ORDER BY t.ano, c.nome, a.nome;
