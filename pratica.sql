@@ -79,3 +79,19 @@ JOIN turmas t ON m.turma_id = t.id
 JOIN cursos c ON t.curso_id = c.id
 JOIN notas n ON n.matricula_id = m.id
 ORDER BY t.ano, c.nome, a.nome;
+
+
+-- Passo 4
+   -- Remoção de dependencias
+   DELETE FROM notas 
+WHERE matricula_id IN (
+    SELECT id FROM matriculas WHERE aluno_id = 5
+);
+
+    -- Deletar matríclas
+    DELETE FROM matriculas 
+    WHERE aluno_id = 5;
+
+    -- Deletar o aluno
+    DELETE FROM alunos 
+    WHERE id = 5;
