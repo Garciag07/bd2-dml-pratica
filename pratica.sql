@@ -9,6 +9,6 @@ VALUES (1, 7),
 (8, 12),
 (9, 10);
 
-UPDATE alunos
-SET
-WHERE 
+BEGIN;
+UPDATE notas            -- Passo 2
+SET nota = nota * 10;
